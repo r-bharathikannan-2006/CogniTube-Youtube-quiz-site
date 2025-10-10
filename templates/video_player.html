@@ -71,7 +71,7 @@
                     <div class="bg-gray-50 p-8 rounded-lg shadow-inner text-center space-y-4">
                         <h2 class="text-3xl font-bold text-gray-800">Quiz Complete!</h2>
                         <p class="text-5xl font-extrabold text-blue-600" id="percentage-score">0%</p>
-                        <p class="text-2xl font-semibold text-gray-700">You scored <span class="text-blue-600" id="current-score">0</span> out of <span class="text-blue-600">10</span> questions.</p>
+                        <p class="text-2xl font-semibold text-gray-700">You scored <span class="text-blue-600" id="current-score">0</span> out of <span class="text-blue-600" id="total-questions">10</span> questions.</p>
                     </div>
                 </div>
             </div>
@@ -143,6 +143,7 @@
         const percentage = (score / totalQuestions) * 100;
         document.getElementById('current-score').textContent = score;
         document.getElementById('percentage-score').textContent = percentage.toFixed(0) + '%';
+        document.getElementById('total-questions').textContent = totalQuestions;
         
         const resultsScreen = document.getElementById('results-screen');
         if (resultsScreen) {
@@ -152,4 +153,5 @@
 </script>
 </body>
 </html>
+
 
