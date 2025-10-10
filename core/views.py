@@ -9,7 +9,7 @@ def search_template(request):
         query = request.POST.get('query')
         videos_list = apis.search_video(query=query, maxResults=20)
         if type(videos_list) == str:
-            return render(request, 'error.html', context={'message': videos_list}, 'video_id': "")
+            return render(request, 'error.html', context={'message': videos_list, 'video_id': "")
         dictionary = {
             'videos_list':videos_list
         }
@@ -18,7 +18,7 @@ def search_template(request):
 def open_player(request, video_id):
     temp = apis.generate_questions(video_id)
     if type(temp) == str:
-            return render(request, 'error.html', context={'message': temp}, 'video_id': video_id)
+            return render(request, 'error.html', context={'message': temp, 'video_id': video_id)
     dictionary = {
         'questions' : temp['questions'],
         'video_id': video_id,
