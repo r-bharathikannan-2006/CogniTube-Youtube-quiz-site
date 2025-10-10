@@ -102,28 +102,11 @@ def generate_questions(video_id):
         'Content-Type': "applicaton/json",
         'x-goog-api-key': api_key
     }
-    prompt = f"""
-        Generate a well structured content with this transcript. Don't miss out any content.
-
-        {full_transript}
-
-        ["NOTE: Dont respond with intro or outro, only respond with the structured content."]
-        ["NOTE: So that I can straightly store that in a variable by accessing your response using api."]
-        """
-    data = {
-        'contents': [{'parts': [{'text': prompt}]}]
-    }
-    try:
-        response = requests.post(ai_url , headers=headers, data=json.dumps(data))
-        result = response.json()
-        content_obj = result['candidates'][0]['content']['parts'][0]['text'] 
-    except:
-        return "Oops, something went wrong while generating the quiz. Please try reloading the page, and if the problem persists, feel free to provide feedback."
     # Question Generator
     prompt = f"""
-        Generate 10 multiple choice quiz questions based on the following text:
+        Generate 10 multiple choice quiz questions based on the following transcript:
 
-        "{str(content_obj)}"
+        "{str(full_transript)}"
 
         Format the output as a JSON array of objects, where each object contains:
         - "question": The quiz question.
@@ -134,7 +117,6 @@ def generate_questions(video_id):
         'contents': [{'parts': [{'text': prompt}]}]
     }
     dictionary = {
-        'summary': str(content_obj),
         'questions': []
     }
     try:
