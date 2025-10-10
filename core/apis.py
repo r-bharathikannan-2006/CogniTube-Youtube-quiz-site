@@ -172,7 +172,7 @@ def summary_extract(video_id):
     except Exception as e:
         return "Please ensure the video has available English subtitles. If it does and you are still seeing this message, please feel free to provide feedback."
 
-    api_key = 'AIzaSyCwAek2xvYYHrU4HM_-C8K9I2-CuMxL5Ts'
+    api_key = os.getenv("GEMINI_KEY")
     ai_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
     headers = {
         'Content-Type': "application/json",
