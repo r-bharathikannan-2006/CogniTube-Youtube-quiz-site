@@ -21,8 +21,7 @@ def open_player(request, video_id):
             return render(request, 'error.html', context={'message': temp, 'video_id': video_id})
     dictionary = {
         'questions' : temp['questions'],
-        'video_id': video_id,
-        'summary': temp['summary']
+        'video_id': video_id
     }
     return render(request, 'video_player.html', context=dictionary)
 
