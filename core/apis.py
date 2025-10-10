@@ -104,7 +104,7 @@ def generate_questions(video_id):
     }
     # Question Generator
     prompt = f"""
-        Generate 15 technical or academical (concept based) multiple choice quiz questions based on the following transcript:
+        Generate 15 technical or academical (concept oriented) multiple choice quiz questions based on the following transcript:
 
         "{str(full_transript)}"
 
