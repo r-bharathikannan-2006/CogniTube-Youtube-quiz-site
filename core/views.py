@@ -1,0 +1,37 @@
+from django.shortcuts import render
+from . import apis
+
+# Create your views here.
+def search_template(request):
+    if request.method == 'GET':
+        return render(request, "search_template.html")
+    elif request.method == 'POST':
+        query = request.POST.get('query')
+        videos_list = apis.search_video(query=query, maxResults=20)
+        if type(videos_list) == str:
+            return render(request, 'error.html', context={'message': videos_list})
+        dictionary = {
+            'videos_list':videos_list
+        }
+        return render(request, 'search_results.html', context=dictionary)
+    
+def open_player(request, video_id):
+    temp = apis.generate_questions(video_id)
+    if type(temp) == str:
+            return render(request, 'error.html', context={'message': temp})
+    dictionary = {
+        'questions' : temp['questions'],
+        'video_id': video_id,
+        'summary': temp['summary']
+    }
+    return render(request, 'video_player.html', context=dictionary)
+
+
+    
+
+    
+
+
+
+
+
