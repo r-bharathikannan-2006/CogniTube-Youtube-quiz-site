@@ -24,13 +24,6 @@ def parse_duration(iso_string):
         
     return " ".join(parts) if parts else "0s"
 
-# Example usage with duration from the API
-duration_string = "PT12H"
-readable_duration = parse_duration(duration_string)
-print(f"Readable Duration: {readable_duration}") # Output: Readable Duration: 12h
-
-
-# Youtube search
 def search_video(query, maxResults=10):
     """Returns the list of related videos.  Each video object is a dictionary with video_id, title, url as keys."""
     API_KEY = os.getenv("SEARCH_KEY")
@@ -166,45 +159,3 @@ def generate_questions(video_id):
     except:
         return "Oops, something went wrong while generating the quiz. Please try reloading the page, and if the problem persists, feel free to provide feedback."
         
-    
-def summary_extract(video_id):
-    """Return the list of dictionary which represents questions."""
-    try:
-        ytt_api = YouTubeTranscriptApi(
-            proxy_config=WebshareProxyConfig(
-                proxy_username="eenmspqi",
-                proxy_password="z0j6rd1fv4zx",
-            )
-        )
-        transcript = ytt_api.fetch(video_id, languages=['en'])
-        full_transript = ""
-        for segment in transcript:
-            full_transript += (segment.text + " ")
-    except Exception as e:
-        return "Please ensure the video has available English subtitles. If it does and you are still seeing this message, please feel free to provide feedback."
-
-    api_key = os.getenv("GEMINI_KEY")
-    ai_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-    headers = {
-        'Content-Type': "application/json",
-        'x-goog-api-key': api_key
-    }
-    
-    prompt = f"""
-    Summarize the following transcript. Provide the output as plain text only. Do not use any Markdown formatting, such as headings, bold text, or lists.
-    {full_transript}
-    """
-    data = {
-        'contents': [{'parts': [{'text': prompt}]}]
-    }
-
-    try:
-        response = requests.post(ai_url, headers=headers, data=json.dumps(data))
-        result = response.json()
-        
-        summary = result['candidates'][0]['content']['parts'][0]['text']
-        return summary
-
-    except Exception as e:
-        return "Sorry, we were unable to generate the summary. Please try again, and if the problem persists, feel free to provide feedback."
-    
