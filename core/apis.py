@@ -2,6 +2,7 @@ import requests
 import json
 import re
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api.proxies import WebshareProxyConfig
 import os
 
 def parse_duration(iso_string):
@@ -89,7 +90,12 @@ def generate_questions(video_id):
     """
     
     try:
-        ytt_api = YouTubeTranscriptApi()
+        ytt_api = YouTubeTranscriptApi(
+            proxy_config=WebshareProxyConfig(
+                proxy_username="eenmspqi",
+                proxy_password="z0j6rd1fv4zx",
+            )
+        )
         transcript = ytt_api.fetch(video_id, languages=['en'])
         full_transript = ""
         for segment in transcript:
@@ -164,7 +170,12 @@ def generate_questions(video_id):
 def summary_extract(video_id):
     """Return the list of dictionary which represents questions."""
     try:
-        ytt_api = YouTubeTranscriptApi()
+        ytt_api = YouTubeTranscriptApi(
+            proxy_config=WebshareProxyConfig(
+                proxy_username="eenmspqi",
+                proxy_password="z0j6rd1fv4zx",
+            )
+        )
         transcript = ytt_api.fetch(video_id, languages=['en'])
         full_transript = ""
         for segment in transcript:
