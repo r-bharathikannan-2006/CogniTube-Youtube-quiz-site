@@ -140,35 +140,6 @@ To get a local copy up and running, follow these simple steps.
 
 ---
 
-## 📂 Project Structure
-
-The project follows a standard Django layout:
-
-CogniTube-Youtube-quiz-site/
-├── core/ # Main application for search, API calls, and quiz generation
-│ ├── migrations/
-│ ├── templates/ # HTML templates for the core app
-│ ├── **init**.py
-│ ├── admin.py
-│ ├── apis.py # Logic for YouTube & Gemini API calls
-│ ├── apps.py
-│ ├── models.py
-│ ├── tests.py
-│ ├── urls.py
-│ └── views.py # Main view logic
-├── youtube_quiz/ # Django project configuration folder
-│ ├── **init**.py
-│ ├── asgi.py
-│ ├── settings.py
-│ ├── urls.py
-│ └── wsgi.py
-├── .gitignore
-├── manage.py
-├── requirements.txt
-└── README.md
-
----
-
 ## 🙌 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
