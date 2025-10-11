@@ -2,6 +2,7 @@
 
 CogniTube transforms passive video watching into an active learning experience. Simply search for any educational video on YouTube, and CogniTube will dynamically generate a multiple-choice quiz based on the video's content, helping you test and reinforce your knowledge on the spot.
 
+### [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge)](https://cognitube.onrender.com)
 ---
 
 ## 🚀 Table of Contents
