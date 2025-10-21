@@ -1,0 +1,26 @@
+# .github/workflows/pinger.yml
+
+# Name of the workflow
+name: Website Pinger
+
+on:
+  # Allows you to run this workflow manually from the Actions tab on GitHub
+  workflow_dispatch:
+  
+  # Trigger the workflow on a schedule
+  schedule:
+    # This runs the job every 10 minutes. Render's free tier sleeps after
+    # 15 minutes of inactivity, so 10 minutes is a safe interval.
+    - cron: '*/10 * * * *'
+
+jobs:
+  ping:
+    # Use the latest version of Ubuntu for the runner
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Ping Website
+        # Use curl to send an HTTP GET request to your website's URL.
+        # The -s flag makes curl silent, so it doesn't output the site content to the log.
+        # Replace the URL below with your actual Render website URL.
+        run: curl -s "https://cognitube.onrender.com"
