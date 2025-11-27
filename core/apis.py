@@ -39,6 +39,7 @@ def search_video(query, maxResults=10):
         'type': 'video',
         'relevanceLanguage': 'en',
         'safeSearch': 'strict',
+        'videoEmbeddable': 'true'
     }
     response = requests.get(search_url, params=params)
     if response.status_code == 200:
