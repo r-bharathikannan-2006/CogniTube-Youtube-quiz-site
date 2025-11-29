@@ -8,7 +8,7 @@ CogniTube transforms passive video watching into an active learning experience. 
 
 You can try CogniTube live right now!
 
-### [Click here to visit the live website](https://cognitube.onrender.com)
+### [Click here to try live website](https://cognitube.vercel.app/)
 
 #### ⚠️ Please Note:
 
