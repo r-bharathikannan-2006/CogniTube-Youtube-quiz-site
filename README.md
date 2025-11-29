@@ -137,7 +137,7 @@ To get a local copy up and running, follow these simple steps.
 
 ## 🖥️ Usage
 
-1. Navigate to the live application at **[https://cognitube.onrender.com/](https://cognitube.vercel.app/)** or, if running locally, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+1. Navigate to the live application at **[https://cognitube.vercel.app/](https://cognitube.vercel.app/)** or, if running locally, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 2. Enter a topic or keyword into the search bar and submit the form.
   - **Please note:** The initial search may take **8-10 seconds** as it fetches data from the YouTube API.
 3. From the search results page, click on the video you want to study.
