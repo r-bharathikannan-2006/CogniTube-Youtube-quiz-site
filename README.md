@@ -10,13 +10,6 @@ You can try CogniTube live right now!
 
 ### [Click here to try live website](https://cognitube.vercel.app/)
 
-#### ⚠️ Please Note:
-
-This project is hosted on **Render's free tier**. If the website hasn't been visited in a while, the server goes into a sleep mode to conserve resources.
-As a result, your **first visit might take 30-60 seconds to load** while the server wakes up. Subsequent clicks and page loads will be much faster. Thank you for your patience!
-
----
-
 ## 🚀 Table of Contents
 
 - [About The Project](#about-the-project)
@@ -144,7 +137,7 @@ To get a local copy up and running, follow these simple steps.
 
 ## 🖥️ Usage
 
-1. Navigate to the live application at **[https://cognitube.onrender.com/](https://cognitube.onrender.com/)** or, if running locally, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+1. Navigate to the live application at **[https://cognitube.onrender.com/](https://cognitube.vercel.app/)** or, if running locally, go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 2. Enter a topic or keyword into the search bar and submit the form.
   - **Please note:** The initial search may take **8-10 seconds** as it fetches data from the YouTube API.
 3. From the search results page, click on the video you want to study.
