@@ -100,7 +100,7 @@ def generate_questions(video_id):
     api_key = os.getenv("GEMINI_KEY")
     ai_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
     headers = {
-        'Content-Type': "applicaton/json",
+        'Content-Type': "application/json",
         'x-goog-api-key': api_key
     }
     # Question Generator
