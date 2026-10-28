@@ -73,7 +73,7 @@ This project is built with a modern Python web stack:
   - `requests`
   - `youtube-transcript-api`
   - `django`
-
+  
 ---
 
 ## 🏁 Getting Started
