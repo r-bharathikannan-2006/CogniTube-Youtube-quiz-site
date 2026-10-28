@@ -159,9 +159,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ---
 
-## 📧 Contact
+## Team Members
 
-Bharathikannan R - [r.bharathikannan.official@gmail.com]
-Project Link : [https://github.com/r-bharathikannan-2006/CogniTube-Youtube-quiz-site.git](https://github.com/r-bharathikannan-2006/CogniTube-Youtube-quiz-site.git)
-
-LinkedIn : [Linkedin - Bharathikannan R](https://www.linkedin.com/in/bharathikannan-r-1a955733b/)
+Bharathikannan R
+Venu Aravind G
