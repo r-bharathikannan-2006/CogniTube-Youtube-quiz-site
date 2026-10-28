@@ -1,4 +1,4 @@
-# CogniTube ✨ - Dynamic YouTube Quiz Generator
+# CogniTube - Dynamic YouTube Quiz Generator
 
 CogniTube transforms passive video watching into an active learning experience. Simply search for any educational video on YouTube, and CogniTube will dynamically generate a multiple-choice quiz based on the video's content, helping you test and reinforce your knowledge on the spot.
 
